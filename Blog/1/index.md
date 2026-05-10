@@ -1,6 +1,6 @@
 [←返回](https://blog-meow-github.vercel.app)
 
- <img src="./Google-AI-Edge-Gallery.png" width="100">
+ <img src="https://blog-meow-github.vercel.app/Blog/1/Google-AI-Edge-Gallery.png" width="100">
 
 # Google AI Edge Gallery
 
@@ -10,7 +10,7 @@ Google AI Edge Gallery 讓 Google 的輕量模型（像 Gemma）可以直接在�
 
 ---
 
-<img src="./Gemma4 BG.png" width="2000" height="400">
+<img src="https://blog-meow-github.vercel.app/Blog/1/Gemma4 BG.png" width="2000" height="400">
 
 ## Gemma 是什麼？
 
