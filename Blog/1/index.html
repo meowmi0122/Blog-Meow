@@ -209,11 +209,11 @@
   let originalHTML = "";
 
   fetch("./index.md")
-    .then(r => r.text())
-    .then(md => {
-      originalHTML = marked.parse(md);
-      document.getElementById("content").innerHTML = originalHTML;
-    });
+  .then(r => r.text())
+  .then(md => {
+    originalHTML = marked.parse(md);
+    document.getElementById("content").innerHTML = originalHTML;
+  });
 
   document.getElementById("searchInput").addEventListener("input", e => {
     const keyword = e.target.value.trim();
