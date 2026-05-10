@@ -17,6 +17,10 @@
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       transition: 0.2s;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
     hr {
       border: none;
       height: 1px;
@@ -47,9 +51,12 @@
       align-items: center;
       gap: 8px;
     }
-    header img {
+    header a {
       display: block;
       margin: 0 auto;
+    }
+    header img {
+      width: 100px;
     }
     #titleText {
       font-size: 18px;
@@ -173,9 +180,10 @@
   </style>
 </head>
 <body>
-
 <header>
-  <img src="https://blog-meow-github.vercel.app/icon.png" width="100">
+  <a href="https://blog-meow-github.vercel.app/">
+    <img src="https://blog-meow-github.vercel.app/icon.png">
+  </a>
   <div id="titleText">Google AI Gemma本地跑在你的手機、平板上！</div>
   <button id="themeBtn">
     <svg id="icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -183,7 +191,6 @@
     </svg>
   </button>
 </header>
-
 <div class="search-container">
   <div class="search-box">
     <svg viewBox="0 0 24 24" fill="none">
@@ -193,18 +200,15 @@
     <input type="text" id="searchInput" placeholder="搜尋內容並跳轉...">
   </div>
 </div>
-
 <div id="app">
   <div id="content"></div>
 </div>
-
 <button id="backToTop">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="12" y1="19" x2="12" y2="5"></line>
     <polyline points="5 12 12 5 19 12"></polyline>
   </svg>
 </button>
-
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
   marked.setOptions({ gfm: true, breaks: true });
