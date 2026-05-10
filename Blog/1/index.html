@@ -208,7 +208,7 @@
 
   let originalHTML = "";
 
-  fetch("Blog/1/index.md")
+  fetch("index.md")
     .then(r => r.text())
     .then(md => {
       originalHTML = marked.parse(md);
