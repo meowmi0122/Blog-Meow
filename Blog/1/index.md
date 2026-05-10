@@ -1,6 +1,6 @@
 [←返回](https://blog-meow-github.vercel.app)
 
- <img src="Blog/1/Google-AI-Edge-Gallery.png" width="100">
+ <img src="https://blog-meow-github.vercel.app/Blog/1/Google-AI-Edge-Gallery.png" width="100">
 
 # Google AI Gemma 本地跑在你的手機、平板上
 
@@ -14,9 +14,7 @@
 
 Gemma 是 Google 設計的輕量大型語言模型（LLM），目標很直接：
 
-- 小
-- 快
-- 能在裝置上跑
+小、快、能在裝置上跑
 
 也就是說，它不是只存在資料中心的 AI，而是可以真的「放進你的手機裡」。
 
