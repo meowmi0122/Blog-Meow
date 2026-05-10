@@ -1,4 +1,7 @@
 [←返回](https://blog-meow-github.vercel.app)
+
+ <img src="Blog/1/Google-AI-Edge-Gallery.png" width="100">
+
 # Google AI Edge Gallery  
 ## 把 AI 直接塞進你的手機裡，然後讓它在你手上跑起來
 
