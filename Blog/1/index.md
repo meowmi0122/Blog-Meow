@@ -10,7 +10,7 @@ Google AI Edge Gallery 讓 Google 的輕量模型（像 Gemma）可以直接在�
 
 ---
 
-<img src="https://blog-meow-github.vercel.app/Blog/1/Gemma4 BG.png" width="2000" height="400">
+<img src="https://blog-meow-github.vercel.app/Blog/1/Gemma4 BG.png" width="1000" height="500">
 
 ## Gemma 是什麼？
 
