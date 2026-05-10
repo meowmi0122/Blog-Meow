@@ -208,7 +208,7 @@
 
   let originalHTML = "";
 
-  fetch("./index.md")
+  fetch("https://blog-meow-github.vercel.app/Blog/1/index.md")
   .then(r => r.text())
   .then(md => {
     originalHTML = marked.parse(md);

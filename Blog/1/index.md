@@ -2,97 +2,102 @@
 
  <img src="Blog/1/Google-AI-Edge-Gallery.png" width="100">
 
-# Google AI Edge Gallery  
-## 把 AI 直接塞進你的手機裡，然後讓它在你手上跑起來
+# Google AI Gemma 本地跑在你的手機、平板上
+
+你現在看到的不是普通 AI App，而是一個正在改變 AI 使用方式的入口。
+
+[Google AI Edge Gallery](chatgpt://generic-entity?number=0) 讓 Google 的輕量模型（像 Gemma）可以直接在手機與平板上「本地運行」，不用雲端、不用一直連網。
 
 ---
 
-### 你正在看的不是一般 App  
-它是一個把「AI 模型搬到邊緣裝置」的實驗場。
+## Gemma 是什麼？
 
-Google AI Edge Gallery 是 Google 打造的 Edge AI 測試平台，讓你不用雲端也能直接在手機上運行 AI 模型。
+Gemma 是 Google 設計的輕量大型語言模型（LLM），目標很直接：
+
+- 小
+- 快
+- 能在裝置上跑
+
+也就是說，它不是只存在資料中心的 AI，而是可以真的「放進你的手機裡」。
 
 ---
 
-## 下載
+## 下載體驗（直接開始玩）
+
+如果你想立刻體驗 Gemma 在手機上跑起來，可以用下面這個入口：
 
 ### Android
-https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery
+https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery&utm_source=chatgpt.com
+
 ### iOS / iPadOS
-https://apps.apple.com/app/google-ai-edge-gallery/id6749645337
-### 原始碼（開發者模式）
-https://github.com/google-ai-edge/gallery
+https://apps.apple.com/app/google-ai-edge-gallery/id6749645337?utm_source=chatgpt.com
+
+### 原始碼（開發者 / 進階玩法）
+https://github.com/google-ai-edge/gallery?utm_source=chatgpt.com
 
 ---
 
-## 這個 App 在做什麼？
-
-它不是聊天工具，也不是單純 AI App  
-它更像是：
-
-「一個可以在你手機裡直接跑 AI 模型的實驗室」
+下載完成後，你會在 [Google AI Edge Gallery](chatgpt://generic-entity?number=1) 裡看到各種模型測試環境，其中就包含可以本地運行的 Gemma 模型。
 
 ---
 
-## 核心能力
+## 本地跑 AI 是什麼感覺？
 
-### 本地 AI 運算（Edge AI）
-AI 模型直接在裝置內運行  
-不需要把資料丟到雲端
+傳統 AI：
 
----
+手機 → 網路 → 雲端 AI → 回傳答案
 
-### 多模型切換
-你可以切換不同模型進行測試，例如：
-- 文字生成模型
-- 圖像理解模型
-- 多模態 AI
+現在：
+
+手機 → 直接運算 AI（Gemma）
 
 ---
 
-### Prompt 測試環境
-像開發者用的沙盒：
-- 改 prompt
-- 看輸出變化
-- 比較不同模型表現
+## 這代表什麼改變？
+
+### 1. 不需要網路
+飛機模式也能問 AI
+
+### 2. 反應更快
+少掉網路延遲
+
+### 3. 更隱私
+資料不需要送到雲端
+
+### 4. 裝置 AI 化
+手機開始「內建智慧」
 
 ---
 
-### 模型效能觀察
-你可以看到：
-- 延遲時間
-- 推理速度
-- 裝置負載
+## 你可以在裡面做什麼？
+
+### 本地聊天
+直接跟 Gemma 對話
+
+### Prompt 測試
+改提示詞，看 AI 怎麼變化
+
+### 模型比較
+不同版本 Gemma 輸出差異直接對照
+
+### 離線實驗
+沒有網路也能繼續測 AI 行為
 
 ---
 
-### 離線能力
-部分模型可以：
-- 沒網路也能跑
-- 適合飛行模式或隱私場景
+## 為什麼這很重要？
 
----
+這代表 AI 正在從：
 
-## 適合誰？
+「雲端服務」  
+變成  
+「裝置能力」
 
-- 想玩 AI 模型的人
-- 想做 Edge AI 實驗的開發者
-- 想測手機 AI 性能的人
-- 想研究 LLM 行為的人
-
----
-
-## 它的真正意義
-
-這不是一個「App」
-
-而是 Google 在說一件事：
-
-> AI 不一定要在雲端  
-> AI 可以直接在你的裝置上活著
+就像相機、音樂播放器一樣，AI 正在變成本機功能。
 
 ---
 
 ## 一句話總結
 
-Google AI Edge Gallery 是一個讓 AI 從雲端走下來，住進你手機裡的實驗平台。
+Gemma + Google AI Edge Gallery  
+就是把 AI 從雲端拉到你手上的那個轉折點。
