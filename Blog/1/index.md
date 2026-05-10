@@ -20,18 +20,18 @@ Gemma 是 Google 設計的輕量大型語言模型（LLM），目標很直接：
 
 ---
 
-## 下載體驗（直接開始玩）
+## 下載體驗
 
 如果你想立刻體驗 Gemma 在手機上跑起來，可以用下面這個入口：
 
 ### Android
-https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery&utm_source=chatgpt.com
+https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery
 
 ### iOS / iPadOS
-https://apps.apple.com/app/google-ai-edge-gallery/id6749645337?utm_source=chatgpt.com
+https://apps.apple.com/app/google-ai-edge-gallery/id6749645337
 
 ### 原始碼（開發者 / 進階玩法）
-https://github.com/google-ai-edge/gallery?utm_source=chatgpt.com
+https://github.com/google-ai-edge/gallery
 
 ---
 
