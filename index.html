@@ -17,6 +17,24 @@
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       transition: 0.2s;
     }
+    hr {
+      border: none;
+      height: 1px;
+      margin: 40px auto;
+      width: 60%;
+      position: relative;
+      overflow: visible;
+    }
+    hr::after {
+      content: "•••";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 10px;
+      font-size: 18px;
+      letter-spacing: 5px;
+    }
     header {
       padding: 16px;
       text-align: center;
@@ -135,6 +153,8 @@
       height: 24px;
     }
     body.dark { background: #0f0f0f; color: white; }
+    body.dark hr { background: linear-gradient(to right, transparent, #444, transparent); }
+    body.dark hr::after { background: #0f0f0f; color: #666; }
     body.dark header, body.dark .search-container { background: #1f1f1f; }
     body.dark header { border-bottom-color: #333; }
     body.dark .search-box { background: #1a1a1a; border-color: #333; }
@@ -142,6 +162,8 @@
     body.dark a { color: #4da3ff; }
     body.dark #themeBtn, body.dark #backToTop { background: #2a2a2a; color: white; }
     body.light { background: #ffffff; color: #000000; }
+    body.light hr { background: linear-gradient(to right, transparent, #ddd, transparent); }
+    body.light hr::after { background: #ffffff; color: #999; }
     body.light header, body.light .search-container { background: #f2f2f2; }
     body.light header { border-bottom-color: #ddd; }
     body.light .search-box { background: #f7f7f7; border-color: #ddd; }
@@ -151,7 +173,6 @@
   </style>
 </head>
 <body>
-
 <header>
   <img src="https://blog-meow-github.vercel.app/icon.png" width="100">
   <div id="titleText">Blog Meow</div>
@@ -161,7 +182,6 @@
     </svg>
   </button>
 </header>
-
 <div class="search-container">
   <div class="search-box">
     <svg viewBox="0 0 24 24" fill="none">
@@ -171,50 +191,40 @@
     <input type="text" id="searchInput" placeholder="搜尋內容並跳轉...">
   </div>
 </div>
-
 <div id="app">
   <div id="content"></div>
 </div>
-
 <button id="backToTop">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="12" y1="19" x2="12" y2="5"></line>
     <polyline points="5 12 12 5 19 12"></polyline>
   </svg>
 </button>
-
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
   marked.setOptions({ gfm: true, breaks: true });
-
   const themes = {
     dark: { icon: `<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="#fff" stroke-width="2"/>` },
     light: { icon: `<path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke="#000" stroke-width="2"/>` }
   };
-
   function setTheme(t) {
     document.body.classList.remove("dark", "light");
     document.body.classList.add(t);
     localStorage.setItem("theme", t);
     document.getElementById("icon").innerHTML = themes[t].icon;
   }
-
   const saved = localStorage.getItem("theme") || "dark";
   setTheme(saved);
-
   document.getElementById("themeBtn").onclick = () => {
     setTheme(document.body.classList.contains("dark") ? "light" : "dark");
   };
-
   let originalHTML = "";
-
   fetch("index.md")
     .then(r => r.text())
     .then(md => {
       originalHTML = marked.parse(md);
       document.getElementById("content").innerHTML = originalHTML;
     });
-
   document.getElementById("searchInput").addEventListener("input", e => {
     const keyword = e.target.value.trim();
     const contentDiv = document.getElementById("content");
@@ -247,7 +257,6 @@
       });
     }
   });
-
   const btt = document.getElementById("backToTop");
   window.onscroll = function() {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -260,6 +269,5 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 </script>
-
 </body>
 </html>
