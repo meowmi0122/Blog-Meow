@@ -2,11 +2,11 @@
 
  <img src="https://blog-meow-github.vercel.app/Blog/1/Google-AI-Edge-Gallery.png" width="100">
 
-# Google AI Gemma 本地跑在你的手機、平板上
+# Google AI Edge Gallery
 
 你現在看到的不是普通 AI App，而是一個正在改變 AI 使用方式的入口。
 
-[Google AI Edge Gallery](chatgpt://generic-entity?number=0) 讓 Google 的輕量模型（像 Gemma）可以直接在手機與平板上「本地運行」，不用雲端、不用一直連網。
+Google AI Edge Gallery 讓 Google 的輕量模型（像 Gemma）可以直接在手機與平板上「本地運行」，不用雲端、不用一直連網。
 
 ---
 
@@ -35,7 +35,7 @@ https://github.com/google-ai-edge/gallery
 
 ---
 
-下載完成後，你會在 [Google AI Edge Gallery](chatgpt://generic-entity?number=1) 裡看到各種模型測試環境，其中就包含可以本地運行的 Gemma 模型。
+下載完成後，你會在 Google AI Edge Gallery 裡看到各種模型測試環境，其中就包含可以本地運行的 Gemma 模型。
 
 ---
 
