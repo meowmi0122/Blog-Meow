@@ -1,4 +1,3 @@
-[←返回](https://blog-meow-github.vercel.app)
 
  <img src="https://blog-meow-github.vercel.app/Blog/1/Google-AI-Edge-Gallery.png" width="100">
 
