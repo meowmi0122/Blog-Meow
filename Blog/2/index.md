@@ -207,35 +207,47 @@ https://USERNAME.github.io/REPOSITORY
 
 # README.md 教學
 
+```Markdown
+# 標題（大）
 ## 標題
-
-# 標題  
-## 小標題
+### 標題
+#### 標題
+##### 標題
+###### 標題（小）
+```
 
 ---
 
 ## 粗體
 
+```MarkDown
 **文字**
+```
 
 ---
 
 ## 圖片
 
+```MarkDown
 ![Image](image.png)
+```
 
 ---
 
 ## 連結
 
+```MarkDown
 [GitHub](https://github.com)
+```
 
 ---
 
 ## 程式碼區塊
 
+```MarkDown
 ```html
 <h1>Hello</h1>
+```
 ```
 
 ---
