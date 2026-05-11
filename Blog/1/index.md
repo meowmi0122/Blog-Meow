@@ -103,5 +103,7 @@ Gemma + Google AI Edge Gallery
 就是把 AI 從雲端拉到你手上的那個轉折點。
 
 --- 
-  
-© meowmi0122/Littlemeow0122．[Github](https://github.com/meowmi0122/Blog-Meow)
+
+*2026/5/10*
+
+© 2026 BLOG-MEOW , meowmi0122/Littlemeow0122．[Github](https://github.com/meowmi0122/Blog-Meow)
