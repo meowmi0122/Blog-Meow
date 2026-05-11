@@ -2,123 +2,83 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Blog Meow．Google AI Gemma</title>
+  <title>Blog Meow．Google AI Gemma本地跑在你的手機、平板上！</title>
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* 基礎樣式 */
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; transition: 0.2s; overflow-x: hidden; }
-    img { max-width: 100%; height: auto; border-radius: 8px; cursor: zoom-in; }
+    img { max-width: 100%; height: auto; border-radius: 8px; }
     hr { border: none; height: 1px; margin: 40px auto; width: 60%; position: relative; overflow: visible; }
     hr::after { content: "•••"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0 10px; font-size: 18px; letter-spacing: 5px; }
-    
     header { padding: 16px; text-align: center; border-bottom: 1px solid; position: sticky; top: 0; z-index: 1001; display: flex; flex-direction: column; align-items: center; gap: 8px; }
     header a { display: block; margin: 0 auto; }
     header img { width: 100px; }
-    
-    /* 1. 閱讀進度條 */
-    #progress-container { position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: transparent; }
-    #progress-bar { height: 100%; width: 0%; background: #007aff; transition: width 0.1s; }
-
+    #titleText { font-size: 18px; font-weight: 600; text-align: center; }
     #themeBtn { position: absolute; right: 12px; top: 65%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     #app { padding: 0 20px 20px 20px; text-align: center; }
-    #content { max-width: 800px; margin: 0 auto; line-height: 1.6; }
-    
-    /* 2. 導覽按鈕 & 目錄 */
-    .nav-wrapper { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
-    .nav-btn { font-weight: 600; text-decoration: none; padding: 10px 20px; border-radius: 8px; border: 1px solid; cursor: pointer; transition: 0.2s; font-size: 14px; background: transparent; color: inherit; }
-    
-    #toc-box { display: none; margin: 0 auto 30px; padding: 20px; border-radius: 12px; text-align: left; max-width: 500px; border: 1px solid; animation: fadeIn 0.3s; }
-    #toc-list { list-style: none; padding: 0; margin: 0; }
-    #toc-list li { margin: 12px 0; }
-    #toc-list a { color: inherit; text-decoration: none; opacity: 0.8; font-weight: 500; }
-    #toc-list a:hover { opacity: 1; text-decoration: underline; color: #007aff; }
-
-    /* 3. 代碼塊與自訂複製按鈕 */
-    .code-container { margin: 20px auto; border: 1px solid; border-radius: 12px; overflow: hidden; position: relative; text-align: left; width: 100%; }
+    #content { max-width: 800px; margin: 0 auto; }
+    #content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #content p, #content table { text-align: center; }
+    #content a, .back-link { font-weight: 600; text-decoration: none; }
+    .back-link { display: inline-block; margin: 20px 0; }
+    ul { list-style: none; padding: 0; display: inline-block; text-align: left; margin: 20px auto; }
+    ul li::before { content: "．"; font-weight: bold; margin-right: 8px; color: inherit; }
+    .code-container { margin: 20px auto; border: 1px solid; border-radius: 12px; overflow: hidden; position: relative; text-align: left; max-width: 100%; }
     .code-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; border-bottom: 1px solid; font-size: 14px; font-weight: bold; }
     .copy-btn { background: transparent; border: 1px solid; border-radius: 6px; padding: 4px 8px; cursor: pointer; font-size: 12px; display: flex; align-items: center; gap: 4px; transition: 0.3s; color: inherit; }
     .copy-btn.success { background-color: #28a745 !important; border-color: #28a745 !important; color: white !important; }
     pre { margin: 0; padding: 16px; overflow-x: auto; font-family: monospace; font-size: 14px; line-height: 1.5; }
-
-    /* 4. 圖片燈箱 */
-    #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; z-index: 2000; justify-content: center; align-items: center; cursor: zoom-out; }
-    #lightbox img { max-width: 95%; max-height: 95%; border-radius: 4px; }
-
-    /* 搜尋樣式 */
     .search-container { position: sticky; top: 153px; z-index: 1000; padding: 10px 0; width: 100%; text-align: center; }
     .search-box { display: flex; align-items: center; gap: 10px; margin: 0 auto; max-width: 500px; padding: 12px 16px; border-radius: 14px; border: 1px solid; background: inherit; }
     .search-box input { flex: 1; border: none; outline: none; background: transparent; font-size: 16px; color: inherit; }
     .highlight { background-color: #ffeb3b; color: #000; border-radius: 2px; }
-
     #backToTop { position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 1002; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-
-    /* 深色模式變數 */
     body.dark { background: #0f0f0f; color: white; }
     body.dark header, body.dark .search-container { background: #1f1f1f; border-color: #333; }
-    body.dark .nav-btn, body.dark #toc-box { border-color: #333; background: #1a1a1a; }
-    body.dark .code-container { background: #1a1a1a; border-color: #333; }
-    body.dark .code-header { background: #2d2d2d; border-color: #333; }
-    body.dark #themeBtn, body.dark #backToTop { background: #2a2a2a; color: white; }
+    body.dark #content a, body.dark .back-link { color: #4da3ff; }
     body.dark hr { background: linear-gradient(to right, transparent, #444, transparent); }
     body.dark hr::after { background: #0f0f0f; color: #666; }
-
-    /* 淺色模式變數 */
+    body.dark .code-container { background: #1a1a1a; border-color: #333; }
+    body.dark .code-header { background: #2d2d2d; border-color: #333; }
+    body.dark .copy-btn { border-color: #555; }
+    body.dark #themeBtn, body.dark #backToTop { background: #2a2a2a; color: white; }
     body.light { background: #ffffff; color: #000000; }
     body.light header, body.light .search-container { background: #f2f2f2; border-color: #ddd; }
-    body.light .nav-btn, body.light #toc-box { border-color: #ddd; background: #f9f9f9; }
-    body.light .code-container { background: #f8f8f8; border-color: #ccc; }
-    body.light .code-header { background: #eee; border-color: #ccc; }
-    body.light #themeBtn, body.light #backToTop { background: #eeeeee; color: black; }
+    body.light #content a, body.light .back-link { color: #007aff; }
     body.light hr { background: linear-gradient(to right, transparent, #ddd, transparent); }
     body.light hr::after { background: #ffffff; color: #999; }
-
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    body.light .code-container { background: #f8f8f8; border-color: #ccc; }
+    body.light .code-header { background: #eee; border-color: #ccc; }
+    body.light .copy-btn { border-color: #ccc; }
+    body.light #themeBtn, body.light #backToTop { background: #eeeeee; color: black; }
   </style>
 </head>
 <body>
-
 <header>
-  <a href="/"><img src="https://blog-meow-github.vercel.app/icon.png"></a>
+  <a href="https://blog-meow-github.vercel.app/"><img src="https://blog-meow-github.vercel.app/icon.png"></a>
   <div id="titleText">Google AI Gemma本地跑在你的手機、平板上！</div>
-  <button id="themeBtn"><svg id="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"></svg></button>
-  <div id="progress-container"><div id="progress-bar"></div></div>
+  <button id="themeBtn"><svg id="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="currentColor" stroke-width="2"/></svg></button>
 </header>
-
 <div class="search-container">
   <div class="search-box">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     <input type="text" id="searchInput" placeholder="搜尋文章內容...">
   </div>
 </div>
-
 <div id="app">
-  <div class="nav-wrapper">
-    <a href="/" class="nav-btn">← 返回首頁</a>
-    <button class="nav-btn" onclick="toggleTOC()">快速目錄</button>
-  </div>
-  <div id="toc-box"><ul id="toc-list"></ul></div>
+  <a href="https://blog-meow-github.vercel.app/" class="back-link">← 返回首頁</a>
   <div id="content"></div>
 </div>
-
-<div id="lightbox"><img src="" id="lightbox-img"></div>
 <button id="backToTop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></button>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-  // SVG 圖示
   const copyIcon = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
   const checkIcon = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
 
-  // Markdown 解析設定
   const renderer = new marked.Renderer();
-  renderer.heading = (text, level) => {
-    const id = (typeof text === 'object' ? text.text : text).toLowerCase().replace(/[^\w\u4e00-\u9fa5]+/g, '-');
-    return `<h${level} id="${id}">${typeof text === 'object' ? text.text : text}</h${level}>`;
-  };
   renderer.code = (arg1, language) => {
     const codeText = typeof arg1 === 'object' ? arg1.text : arg1;
     const lang = language || "TEXT";
@@ -126,78 +86,32 @@
   };
   marked.setOptions({ renderer: renderer, gfm: true, breaks: true });
 
-  // 主題切換邏輯
-  function setTheme(t) {
-    document.body.className = t;
-    localStorage.setItem("theme", t);
-    const iconBtn = document.getElementById("icon");
-    if (t === 'dark') {
-      iconBtn.innerHTML = `<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="#fff" stroke-width="2"/>`;
-    } else {
-      iconBtn.innerHTML = `<path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke="#000" stroke-width="2"/>`;
-    }
-  }
-  setTheme(localStorage.getItem("theme") || "dark");
-  document.getElementById("themeBtn").onclick = () => setTheme(document.body.className === "dark" ? "light" : "dark");
-
-  // 載入文章
-  let originalHTML = "";
-  fetch("https://blog-meow-github.vercel.app/Blog/1/index.md").then(r => r.text()).then(md => {
-    originalHTML = marked.parse(md);
-    const content = document.getElementById("content");
-    content.innerHTML = originalHTML;
-
-    // 生成目錄
-    const headings = content.querySelectorAll("h2");
-    const list = document.getElementById("toc-list");
-    headings.forEach(h => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="#${h.id}">． ${h.innerText}</a>`;
-      li.querySelector('a').onclick = (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: h.offsetTop - 180, behavior: "smooth" });
-        document.getElementById("toc-box").style.display = "none";
-      };
-      list.appendChild(li);
-    });
-
-    // 圖片燈箱綁定
-    content.querySelectorAll("img").forEach(img => {
-      img.onclick = () => {
-        document.getElementById("lightbox-img").src = img.src;
-        document.getElementById("lightbox").style.display = "flex";
-      };
-    });
-  });
-
-  // 功能函數
-  function toggleTOC() {
-    const box = document.getElementById("toc-box");
-    box.style.display = box.style.display === "block" ? "none" : "block";
-  }
-
   function copyCode(btn) {
     const code = btn.closest('.code-container').querySelector('code').innerText;
     navigator.clipboard.writeText(code).then(() => {
       const oldHTML = btn.innerHTML;
       btn.innerHTML = `${checkIcon} 已複製`;
       btn.classList.add('success');
-      setTimeout(() => { btn.innerHTML = oldHTML; btn.classList.remove('success'); }, 2000);
+      setTimeout(() => {
+        btn.innerHTML = oldHTML;
+        btn.classList.remove('success');
+      }, 2000);
     });
   }
 
-  // 捲動監聽 (進度條 & 回頂部)
-  window.onscroll = () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
-    document.getElementById("backToTop").style.display = window.scrollY > 300 ? "flex" : "none";
-  };
+  function setTheme(t) {
+    document.body.className = t; localStorage.setItem("theme", t);
+    document.getElementById("icon").innerHTML = t === 'dark' ? `<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="#fff" stroke-width="2"/>` : `<path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke="#000" stroke-width="2"/>`;
+  }
+  setTheme(localStorage.getItem("theme") || "dark");
+  document.getElementById("themeBtn").onclick = () => setTheme(document.body.className === "dark" ? "light" : "dark");
 
-  document.getElementById("backToTop").onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.getElementById("lightbox").onclick = function() { this.style.display = "none"; };
+  let originalHTML = "";
+  fetch("https://blog-meow-github.vercel.app/Blog/1/index.md").then(r => r.text()).then(md => {
+    originalHTML = marked.parse(md);
+    document.getElementById("content").innerHTML = originalHTML;
+  });
 
-  // 搜尋邏輯
   function escapeRegExp(string) { return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
   document.getElementById("searchInput").addEventListener("input", e => {
     const keyword = e.target.value.trim();
@@ -207,7 +121,7 @@
       const regex = new RegExp(`(${escapeRegExp(keyword)})`, 'gi');
       contentDiv.innerHTML = originalHTML;
       const walk = document.createTreeWalker(contentDiv, NodeFilter.SHOW_TEXT, null, false);
-      let node, nodes = [];
+      let node; const nodes = [];
       while (node = walk.nextNode()) if (node.nodeValue.match(regex)) nodes.push(node);
       nodes.forEach(n => {
         const s = document.createElement('span');
@@ -218,6 +132,10 @@
       if (first) window.scrollTo({ top: first.getBoundingClientRect().top + window.scrollY - 220, behavior: 'smooth' });
     } catch(err) {}
   });
+
+  const btt = document.getElementById("backToTop");
+  window.onscroll = () => btt.style.display = window.scrollY > 200 ? "flex" : "none";
+  btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 </script>
 </body>
 </html>
