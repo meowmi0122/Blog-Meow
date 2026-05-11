@@ -1,3 +1,5 @@
+<img src="https://blog-meow-github.vercel.app/Blog/2/Github.png" width="120">
+
 # GitHub 使用教學＆功能介紹
 
 ## 什麼是 GitHub？
@@ -28,6 +30,7 @@ Repository 是專案資料夾。
 - JavaScript
 - Python
 - Markdown
+- 任何格式程式碼
 - 圖片
 - App 專案
 
@@ -104,6 +107,8 @@ https://github.com
 
 ## 2. 點擊 Sign Up
 
+<img src="https://blog-meow-github.vercel.app/Blog/2/Screenshot1.jpeg" width="900">
+
 輸入：
 
 Email  
@@ -128,6 +133,8 @@ GitHub 會寄送驗證信。
 
 ## GitHub Login
 
+<img src="https://blog-meow-github.vercel.app/Blog/2/Screenshot2.jpeg" width="900">
+
 https://github.com/login
 
 輸入：
@@ -141,19 +148,7 @@ Password
 
 ## 1. 點擊右上角 +
 
-選擇：
-
-New repository
-
----
-
-## 2. 輸入名稱
-
-例如：
-
-MyWebsite
-
----
+<img src="https://blog-meow-github.vercel.app/Blog/2/Screenshot3.jpeg" width="900">
 
 ## 3. 點擊 Create repository
 
@@ -165,11 +160,15 @@ MyWebsite
 
 ## 方法 1：直接拖曳
 
+<img src="https://blog-meow-github.vercel.app/Blog/2/Screenshot4.jpeg" width="900">
+
 把檔案拖進 GitHub 網頁即可。
 
 ---
 
 ## 方法 2：Upload Files
+
+<img src="https://blog-meow-github.vercel.app/Blog/2/Screenshot5.jpeg" width="900">
 
 Add file  
 ↓  
@@ -180,6 +179,8 @@ Upload files
 # GitHub Pages 教學
 
 ## 開啟網站功能
+
+<img src="https://blog-meow-github.vercel.app/Blog/2/Screenshot6.jpeg" width="900">
 
 進入：
 
@@ -290,6 +291,8 @@ https://USERNAME.github.io/REPOSITORY
 
 # GitHub Desktop
 
+<img src="https://blog-meow-github.vercel.app/Blog/2/Github-Desk" width="120">
+
 GitHub 官方桌面版：
 
 https://desktop.github.com
@@ -297,6 +300,8 @@ https://desktop.github.com
 ---
 
 # VSCode 整合 GitHub
+
+<img src="https://blog-meow-github.vercel.app/Blog/2/VSCode" width="120">
 
 VSCode 可直接登入 GitHub。
 
@@ -335,7 +340,7 @@ Settings → Pages
 
 # 結尾
 
-GitHub 是目前最熱門的開發平台之一。
+GitHub 是目前最熱門的開發平台之一
 
 學會後可以：
 
@@ -345,4 +350,8 @@ GitHub 是目前最熱門的開發平台之一。
 - 與其他人協作
 - 發布開源專案
 
-開始建立你的第一個 Repository 吧！
+**開始建立你的第一個 Repository 吧！**
+
+---
+
+© 2026 BLOG-MEOW , meowmi0122/Littlemeow0122．[Github](https://github.com/meowmi0122/Blog-Meow)

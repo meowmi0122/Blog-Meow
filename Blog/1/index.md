@@ -107,4 +107,6 @@ Gemma + Google AI Edge Gallery
 
 *2026/5/10*
 
+[查看MarkDown原始碼](https://blog-meow-github.vercel.app/Blog/1/index.md)
+
 © 2026 BLOG-MEOW , meowmi0122/Littlemeow0122．[Github](https://github.com/meowmi0122/Blog-Meow)
