@@ -1,8 +1,7 @@
 <img src="https://blog-meow-github.vercel.app/Blog/2/Github.png" width="120">
 
-# GitHub 使用教學＆功能介紹
 
-## 什麼是 GitHub？
+# 什麼是 GitHub？
 
 GitHub 是一個可以存放程式碼、網站、專案的平台。
 
@@ -239,6 +238,9 @@ https://USERNAME.github.io/REPOSITORY
 ```MarkDown
 [GitHub](https://github.com)
 ```
+
+> 完整MarkDown教學可去[MarkDown大全](https://blog-meow-github.vercel.app/Blog/3)
+
 
 ---
 
