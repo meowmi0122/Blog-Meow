@@ -301,7 +301,7 @@ https://USERNAME.github.io/REPOSITORY
 
 # GitHub Desktop
 
-<img src="https://blog-meow-github.vercel.app/Blog/2/Github-Desk" width="120">
+<img src="https://blog-meow-github.vercel.app/Blog/2/Github-Desk.png" width="120">
 
 GitHub 官方桌面版：
 
@@ -311,7 +311,7 @@ https://desktop.github.com
 
 # VSCode 整合 GitHub
 
-<img src="https://blog-meow-github.vercel.app/Blog/2/VSCode" width="120">
+<img src="https://blog-meow-github.vercel.app/Blog/2/VSCode.png" width="120">
 
 VSCode 可直接登入 GitHub。
 
