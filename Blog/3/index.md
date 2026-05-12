@@ -315,8 +315,10 @@ https://google.com
 ## HTML 圖片大小
 
 ```Markdown
-<img src="image.png" width="200">
+(<(img src="image.png" width="200")>)
 ```
+
+把括號去掉即可，因為顯示問題
 
 ```Markdown
 <img src="https://blog-meow-github.vercel.app/Blog/3/MarkDown.png" width="200">
