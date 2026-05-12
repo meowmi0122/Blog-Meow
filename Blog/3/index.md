@@ -227,13 +227,19 @@ Markdown 是一種「輕量級標記語言」。
 
 ---
 
-## 多行程式碼
+## 程式碼
 
+一行的用"```"  
+兩行用"```"  
+  
+  
 ````Markdown
-```js
+(````)js
 console.log("Hello")
-```
-
+console.log("Test")
+(```)
+````
+把掛號去掉即可
 ---
 
 ## 分隔線
@@ -398,7 +404,7 @@ https://google.com
 
 ---
 
-## GitHub 提示框
+## GitHub 提示框 (在這用不了)
 
 ```Markdown
 > [!NOTE]
